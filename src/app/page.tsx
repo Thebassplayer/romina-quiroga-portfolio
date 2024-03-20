@@ -15,7 +15,7 @@ export default function Home() {
             Ingles
           </button>
         </div>
-        <nav className="fixed right-4 top-8 flex flex-row gap-8">
+        <nav className="fixed right-4 top-8 z-50 flex flex-row gap-8">
           <button className="rounded-full border-4 border-secondary bg-primary px-10 py-2 text-5xl text-secondary hover:bg-primarylight">
             Soy
           </button>
@@ -33,7 +33,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="bg-sky-background relative h-screen bg-cover">
+      <section className="relative h-screen bg-sky-background bg-cover">
         <Image
           src={romi}
           alt="Romi"
