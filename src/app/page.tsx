@@ -33,12 +33,28 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="relative h-screen bg-sky-background bg-cover">
-        <Image
-          src={romi}
-          alt="Romi"
-          className="absolute left-0 top-0 h-full w-auto"
-        />
+      <section className="relative -z-50 h-screen bg-sky-background bg-cover">
+        <div className="z-50 mx-auto mt-[200px] flex w-full flex-row justify-center">
+          <span className="text-8xl text-primary">Romina</span>
+          <span className="ml-2 text-8xl text-white">Quiroga</span>
+        </div>
+        <div className="ml-[950px] mt-32">
+          <p className="h-[300px] w-[620px] text-[40px] text-white">
+            Exploradora de mundos digitales, tejiendo historias visuales que
+            despiertan emociones y conectan con el corazón de los usuarios.
+          </p>
+          <div className="mt-6 flex flex-row gap-16">
+            <button className="rounded-full border-4 border-primary bg-transparent px-10 py-2 text-4xl text-white hover:bg-secondary">
+              Linkedin
+            </button>
+            <button className="rounded-full border-4 border-primary bg-transparent px-10 py-2 text-4xl text-white hover:bg-secondary">
+              Email
+            </button>
+          </div>
+        </div>
+        <div className="absolute left-40 top-0 -z-10 h-screen">
+          <Image src={romi} alt="Romi" className="h-full w-auto" />
+        </div>
       </section>
     </main>
   );
