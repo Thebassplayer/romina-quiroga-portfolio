@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import cx from "./utils/classesReducer";
 
 const roboto = Roboto({
   weight: "700",
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={cx(roboto.className)}>{children}</body>
     </html>
   );
 }
