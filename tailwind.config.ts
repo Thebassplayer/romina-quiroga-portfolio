@@ -11,6 +11,12 @@ const config: Config = {
       fontFamily: {
         rb: ["var(--font-rb)"],
       },
+      colors: {
+        primary: "#E3FF00",
+        secondary: "#0142FE",
+        primarylight: "rgba(227, 255, 0, 0.22)",
+        secondarylight: "rgba(1, 66, 254, 0.44)",
+      },
     },
   },
   plugins: [],
