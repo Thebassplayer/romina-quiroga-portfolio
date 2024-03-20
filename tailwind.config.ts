@@ -17,6 +17,9 @@ const config: Config = {
         primarylight: "rgba(227, 255, 0, 0.22)",
         secondarylight: "rgba(1, 66, 254, 0.44)",
       },
+      backgroundImage: {
+        "sky-background": "url('/assets/sky.jpeg')",
+      },
     },
   },
   plugins: [],
