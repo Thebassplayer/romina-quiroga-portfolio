@@ -33,9 +33,9 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="relative -z-50 h-screen bg-sky-background bg-cover">
-        <div className="z-50 mx-auto mt-[200px] flex w-full flex-row justify-center">
-          <span className="text-8xl text-primary">Romina</span>
+      <section className="relative h-screen bg-sky-background bg-cover">
+        <div className="mx-auto mt-[200px] flex w-full flex-row justify-center">
+          <span className="z-20 text-8xl text-primary">Romina</span>
           <span className="ml-2 text-8xl text-white">Quiroga</span>
         </div>
         <div className="ml-[950px] mt-32">
@@ -52,7 +52,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="absolute left-40 top-0 -z-10 h-screen">
+        <div className="absolute left-40 top-0 z-10 h-screen">
           <Image src={romi} alt="Romi" className="h-full w-auto" />
         </div>
       </section>
