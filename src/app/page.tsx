@@ -8,7 +8,7 @@ export default function Home() {
       <section className="relative">
         <div className="pl-10 pt-10">
           <h1 className="text-[128px]">Yo</h1>
-          <h1 className="text-[170px] uppercase">Soy</h1>
+          <h1 className="text-[170px] uppercase">Soy La 1</h1>
         </div>
         <div className="absolute right-96 top-11 -translate-x-28">
           <button className="rounded-full  border-2 border-secondary bg-primary px-6 py-1 text-3xl text-secondary hover:bg-primarylight">
