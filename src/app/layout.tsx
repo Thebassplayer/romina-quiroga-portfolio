@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
 import cx from "./utils/classesReducer";
-
-const roboto = Roboto({
-  weight: "700",
-  variable: "--font-rb",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Romina Quiroga Portfolio",
@@ -21,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cx(roboto.className)}>{children}</body>
+      <body className={cx("font-SansationLg")}>{children}</body>
     </html>
   );
 }
