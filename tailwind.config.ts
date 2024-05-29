@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        rb: ["var(--font-rb)"],
+        SansationLg: ["Sansation-Light", "sans-serif"],
       },
       colors: {
         primary: "#E3FF00",
@@ -18,7 +18,7 @@ const config: Config = {
         secondarylight: "rgba(1, 66, 254, 0.44)",
       },
       backgroundImage: {
-        "sky-background": "url('/assets/sky.jpeg')",
+        "romi-gradient": "url('/assets/background.png')",
       },
     },
   },
