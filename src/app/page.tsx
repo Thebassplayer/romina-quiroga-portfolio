@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="bg-romi-gradient h-screen w-screen overflow-y-scroll bg-cover bg-center">
+    <main className="h-screen w-screen">
       <section className="h-screen w-screen">
         <nav className="w-full">
           <ul className="flex w-full flex-row justify-evenly px-80 py-16">
