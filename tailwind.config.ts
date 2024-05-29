@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         SansationLg: ["Sansation-Light", "sans-serif"],
+        roboto: ["var(--font-rb)"],
       },
       colors: {
         primary: "#E3FF00",
