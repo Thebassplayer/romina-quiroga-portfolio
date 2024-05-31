@@ -4,7 +4,7 @@ import "./globals.css";
 import cx from "./utils/classesReducer";
 
 const roboto = Roboto({
-  weight: "700",
+  weight: "400",
   variable: "--font-rb",
   subsets: ["latin"],
 });
@@ -22,13 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cx(
-          "font-SansationLg bg-romi-gradient overflow-y-auto bg-cover bg-center",
-        )}
+        className={cx("overflow-y-auto bg-romi-gradient bg-cover bg-center")}
       >
         <main className="relative flex flex-col">
           <nav className="absolute top-0 w-screen">
-            <ul className="flex w-full flex-row justify-evenly px-80 py-16">
+            <ul className="flex w-full flex-row justify-evenly px-80 py-16 font-SansationLg">
               <li className="text-2xl">Proyectos</li>
               <li className="text-2xl">Sobre Mi</li>
               <li className="text-2xl">Email</li>
