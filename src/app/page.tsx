@@ -6,9 +6,6 @@ export default function Home() {
       <section className="flex h-screen w-screen items-center justify-center">
         <HeroHome />
       </section>
-      <section className="flex h-screen w-screen items-center justify-center">
-        <HeroHome />
-      </section>
     </>
   );
 }
