@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cx(
-          "h-screen w-screen overflow-y-auto bg-romi-gradient bg-cover bg-center",
+          "h-screen w-screen overflow-y-auto overflow-x-hidden bg-romi-gradient bg-cover bg-center",
         )}
       >
         <main className="relative flex h-screen w-screen grow flex-col">
