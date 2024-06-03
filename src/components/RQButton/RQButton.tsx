@@ -1,6 +1,11 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import cx from "@/app/utils/classesReducer";
+
+type TextTransitionProps = {
+  className?: string;
+};
 
 const rominaQuirogaText = "Romina Quiroga";
 
@@ -9,10 +14,10 @@ const letters = rominaQuirogaText.split("");
 const rightMotion = {
   rest: { opacity: 0, ease: "easeOut", duration: 0.2, type: "tween" },
   hover: {
-    x: -50,
+    x: -60,
     opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.2,
       type: "tween",
       ease: "easeIn",
     },
@@ -22,10 +27,10 @@ const rightMotion = {
 const leftMotion = {
   rest: { opacity: 1, ease: "easeOut", duration: 0.2, type: "tween" },
   hover: {
-    x: -50,
+    x: -60,
     opacity: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.2,
       type: "tween",
       ease: "easeIn",
     },
@@ -33,39 +38,46 @@ const leftMotion = {
 };
 
 const letterEffect = {
-  hidden: {
-    opacity: 0,
-    x: -20,
-  },
-  visible: {
+  rest: { opacity: 0, ease: "easeOut", duration: 0.2, type: "tween" },
+  hover: {
     opacity: 1,
-    x: 0,
+    transition: {
+      type: "tween",
+      ease: "easeIn",
+    },
   },
 };
 
-const TextTransition = () => {
+const TextTransition = ({ className }: TextTransitionProps) => {
   return (
     <motion.div
       initial="rest"
       whileHover="hover"
       animate="rest"
-      className="flex cursor-pointer gap-4 font-roboto font-bold *:text-2xl"
+      className={cx(
+        "relative flex cursor-pointer gap-4 font-roboto *:text-3xl",
+        className,
+      )}
     >
       <motion.div variants={leftMotion}>
         <p>RQ</p>
       </motion.div>
-      <motion.div variants={rightMotion}>
-        {letters.map((letter, index) => (
+      <motion.div
+        variants={rightMotion}
+        className="absolute -right-[240px] top-0 w-max"
+      >
+        {/* {letters.map((letter, index) => (
           <motion.span
             variants={letterEffect}
-            initial="hidden"
-            animate="visible"
+            initial="rest"
+            animate="hover"
             transition={{ duration: 0.5, delay: 0.1 * index }}
             key={index}
           >
             {letter}
           </motion.span>
-        ))}
+        ))} */}
+        <p>{rominaQuirogaText}</p>
       </motion.div>
     </motion.div>
   );
