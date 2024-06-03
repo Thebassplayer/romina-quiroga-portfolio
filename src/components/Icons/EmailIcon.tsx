@@ -15,14 +15,14 @@ const EmailIcon = (props: SVGProps<SVGSVGElement>) => {
         stroke="black"
         stroke-width="2"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
       <path
         d="M6.5625 9.375L15 15.9375L23.4375 9.375"
         stroke="black"
         stroke-width="2"
         stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

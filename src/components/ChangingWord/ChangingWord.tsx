@@ -22,7 +22,7 @@ const ChangingWord = () => {
   }, [index]);
 
   return (
-    <div>
+    <div className="*:text-white">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}

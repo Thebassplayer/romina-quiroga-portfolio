@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <>
       <section className="flex h-screen w-screen items-center justify-center">
-        <div className="flex flex-col justify-center *:font-roboto *:text-8xl *:font-extrabold lg:w-[750px]">
+        <div className="flex flex-col justify-center *:font-roboto *:text-8xl lg:w-[750px]">
           <div className="flex justify-start">
             <p>El</p>
             <p>&nbsp;</p>
-            <p className="font-light">diseño</p>
+            <p className="font-extralight">diseño</p>
             <p>&nbsp;</p>
             <p className="font-roboto">es una</p>
           </div>

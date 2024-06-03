@@ -1,3 +1,4 @@
-const cx = (...classNames: string[]) => classNames.filter(Boolean).join(" ");
+const cx = (...classNames: (string | undefined)[]) =>
+  classNames.filter(Boolean).join(" ");
 
 export default cx;

@@ -5,6 +5,7 @@ import EmailIcon from "../Icons/EmailIcon";
 import AboutIcon from "../Icons/AboutIcon";
 import LanguajeIcon from "../Icons/languajeIcon";
 import Link from "next/link";
+import cx from "@/app/utils/classesReducer";
 
 type DesktopMenuElement = {
   title: {
@@ -39,13 +40,17 @@ const DESKTOP_MENU: DesktopMenuElement[] = [
   },
 ];
 
-const DesktopMenu = () => {
+type DesktopMenuProps = {
+  className?: string;
+};
+
+const DesktopMenu = ({ className }: DesktopMenuProps) => {
   return (
-    <nav className="absolute top-0 w-screen">
+    <nav className={cx("w-screen", className)}>
       <ul className="flex w-full flex-row justify-evenly px-80 py-16 font-SansationLg">
         {DESKTOP_MENU.map((element, index) => (
           <li key={`${index}-${element.path}`}>
-            <Link href={element.path} className="flex text-2xl">
+            <Link href={element.path} className="flex text-3xl">
               {element.icon}
               <p className="ml-2 border-l-2 border-black pl-2">
                 {element.title.spa}
