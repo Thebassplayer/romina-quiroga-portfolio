@@ -1,10 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useLanguaje from "@/hooks/useLanguaje";
 
-const words = ["pensar", "vivir", "soñar", "crear"];
+const words = {
+  eng: ["think", "live", "dream", "create"],
+  esp: ["pensar", "vivir", "soñar", "crear"],
+};
 
 const ChangingWord = () => {
+  const { eng } = useLanguaje();
   const [index, setIndex] = useState(0);
 
   const variants = {
@@ -13,13 +18,15 @@ const ChangingWord = () => {
     exit: { opacity: 0, y: -100 },
   };
 
+  const selectedWords = eng ? words.eng : words.esp;
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((index + 1) % words.length);
+      setIndex((index + 1) % selectedWords.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [index]);
+  }, [index, selectedWords.length]);
 
   return (
     <div className="*:text-white">
@@ -38,7 +45,7 @@ const ChangingWord = () => {
             exit={{ opacity: 0, y: -5 }}
             transition={{ duration: 0.1 }}
           >
-            {words[index]}
+            {selectedWords[index]}
           </motion.h1>
         </motion.div>
       </AnimatePresence>
