@@ -1,6 +1,6 @@
-import { useSearchParams } from "next/navigation";
 import AboutIcon from "../../Icons/AboutIcon";
 import Link from "next/link";
+import useLanguaje from "@/hooks/useLanguaje";
 
 const ABOUT_ME_BUTTON_DATA = {
   title: {
@@ -12,14 +12,9 @@ const ABOUT_ME_BUTTON_DATA = {
 };
 
 const AboutMeButton = () => {
-  const searchParams = useSearchParams();
-  const eng = searchParams.get("eng") === "true" ? true : false;
-  const text = eng
-    ? ABOUT_ME_BUTTON_DATA.title.eng
-    : ABOUT_ME_BUTTON_DATA.title.spa;
-
-  const path = ABOUT_ME_BUTTON_DATA.path;
-  const icon = ABOUT_ME_BUTTON_DATA.icon;
+  const { title, icon, path } = ABOUT_ME_BUTTON_DATA;
+  const { eng } = useLanguaje();
+  const text = eng ? title.eng : title.spa;
 
   return (
     <Link href={path} className="flex">
