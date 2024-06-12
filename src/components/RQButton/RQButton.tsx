@@ -66,17 +66,6 @@ const TextTransition = ({ className }: TextTransitionProps) => {
         variants={rightMotion}
         className="absolute -right-[240px] top-0 w-max"
       >
-        {/* {letters.map((letter, index) => (
-          <motion.span
-            variants={letterEffect}
-            initial="rest"
-            animate="hover"
-            transition={{ duration: 0.5, delay: 0.1 * index }}
-            key={index}
-          >
-            {letter}
-          </motion.span>
-        ))} */}
         <p>{rominaQuirogaText}</p>
       </motion.div>
     </motion.div>
