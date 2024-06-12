@@ -1,7 +1,7 @@
 "use client";
 import EmailIcon from "../../Icons/EmailIcon";
 import Link from "next/link";
-import useLanguaje from "@/hooks/useLanguaje";
+import { useSearchParams } from "next/navigation";
 
 const CONTACT_BUTTON_DATA = {
   title: {
@@ -14,7 +14,8 @@ const CONTACT_BUTTON_DATA = {
 
 const ContactButton = () => {
   const { title, icon, path } = CONTACT_BUTTON_DATA;
-  const { eng } = useLanguaje();
+  const searchParams = useSearchParams();
+  const eng = searchParams.get("eng") === "true" ? true : false;
   const text = eng ? title.eng : title.spa;
 
   return (

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import useLanguaje from "@/hooks/useLanguaje";
+import { useSearchParams } from "next/navigation";
 
 const words = {
   eng: ["think", "live", "dream", "create"],
@@ -9,7 +9,8 @@ const words = {
 };
 
 const ChangingWord = () => {
-  const { eng } = useLanguaje();
+  const searchParams = useSearchParams();
+  const eng = searchParams.get("eng") === "true" ? true : false;
   const [index, setIndex] = useState(0);
 
   const variants = {

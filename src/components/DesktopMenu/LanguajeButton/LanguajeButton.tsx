@@ -2,10 +2,11 @@
 import Link from "next/link";
 import React from "react";
 import LanguajeIcon from "../../Icons/languajeIcon";
-import useLanguaje from "@/hooks/useLanguaje";
+import { useSearchParams } from "next/navigation";
 
 const LanguajeButton = () => {
-  const { eng } = useLanguaje();
+  const searchParams = useSearchParams();
+  const eng = searchParams.get("eng") === "true" ? true : false;
   const path = eng ? "?eng=false" : "?eng=true";
   const text = eng ? "Español" : "English";
 

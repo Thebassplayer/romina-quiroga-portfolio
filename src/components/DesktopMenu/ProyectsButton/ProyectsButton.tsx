@@ -1,8 +1,8 @@
 "use client";
 import Fingerprint from "@/components/Icons/Fingerprint";
-import useLanguaje from "@/hooks/useLanguaje";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 const PROYECTS_BUTTON_DATA = {
   title: {
@@ -32,7 +32,8 @@ const toogleMenu = {
 
 const ProyectsButton = () => {
   const { title, icon } = PROYECTS_BUTTON_DATA;
-  const { eng } = useLanguaje();
+  const searchParams = useSearchParams();
+  const eng = searchParams.get("eng") === "true" ? true : false;
   const text = eng ? title.eng : title.spa;
 
   return (

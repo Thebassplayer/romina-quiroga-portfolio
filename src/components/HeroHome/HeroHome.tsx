@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import ChangingWord from "../ChangingWord/ChangingWord";
-import useLanguaje from "@/hooks/useLanguaje";
+import { useSearchParams } from "next/navigation";
 
 const HeroHome = () => {
-  const { eng } = useLanguaje();
+  const searchParams = useSearchParams();
+  const eng = searchParams.get("eng") === "true" ? true : false;
 
   if (!eng) {
     return (
