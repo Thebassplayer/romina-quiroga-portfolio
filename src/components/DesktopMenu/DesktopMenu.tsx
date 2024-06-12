@@ -8,6 +8,7 @@ import AboutIcon from "../Icons/AboutIcon";
 import LanguajeIcon from "../Icons/languajeIcon";
 import Link from "next/link";
 import cx from "@/app/utils/classesReducer";
+import path from "path";
 
 type DesktopMenuElement = {
   title: {
@@ -36,10 +37,10 @@ const DESKTOP_MENU: DesktopMenuElement[] = [
 ];
 
 const PROYECTS = [
-  { title: "Mercado Home" },
-  { title: "Paella" },
-  { title: "App Home" },
-  { title: "Madre Dachshund" },
+  { title: "Mercado Home", path: "/proyects/mercado-home" },
+  { title: "Paella", path: "/proyects/paella" },
+  { title: "App Home", path: "/proyects/app-home" },
+  { title: "Madre Dachshund", path: "/proyects/madre-dachshund" },
 ];
 
 type DesktopMenuProps = {
@@ -80,7 +81,7 @@ const DesktopMenu = ({ className }: DesktopMenuProps) => {
             >
               {PROYECTS.map((element, index) => (
                 <li key={`${index}-${element.title}`}>
-                  <Link href={`/proyects/${element.title}`}>
+                  <Link href={element.path}>
                     <p className="hover:underline">{element.title}</p>
                   </Link>
                 </li>
