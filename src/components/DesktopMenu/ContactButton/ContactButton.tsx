@@ -1,3 +1,4 @@
+"use client";
 import EmailIcon from "../../Icons/EmailIcon";
 import Link from "next/link";
 import useLanguaje from "@/hooks/useLanguaje";

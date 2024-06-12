@@ -1,3 +1,4 @@
+"use client";
 import AboutIcon from "../../Icons/AboutIcon";
 import Link from "next/link";
 import useLanguaje from "@/hooks/useLanguaje";

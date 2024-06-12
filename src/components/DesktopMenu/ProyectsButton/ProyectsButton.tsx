@@ -1,5 +1,4 @@
 "use client";
-
 import Fingerprint from "@/components/Icons/Fingerprint";
 import useLanguaje from "@/hooks/useLanguaje";
 import { motion } from "framer-motion";
