@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 
-const words = {
+const MOVING_WORDS = {
   eng: ["thinking", "living", "dreaming", "creating"],
   esp: ["pensar", "vivir", "soñar", "crear"],
 };
@@ -19,15 +19,15 @@ const ChangingWord = () => {
     exit: { opacity: 0, y: -100 },
   };
 
-  const selectedWords = eng ? words.eng : words.esp;
+  const words = eng ? MOVING_WORDS.eng : MOVING_WORDS.esp;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((index + 1) % selectedWords.length);
+      setIndex((index + 1) % words.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [index, selectedWords.length]);
+  }, [index, words.length]);
 
   return (
     <div className="*:text-white">
@@ -46,7 +46,7 @@ const ChangingWord = () => {
             exit={{ opacity: 0, y: -5 }}
             transition={{ duration: 0.1 }}
           >
-            {selectedWords[index]}
+            {words[index]}
           </motion.h1>
         </motion.div>
       </AnimatePresence>
