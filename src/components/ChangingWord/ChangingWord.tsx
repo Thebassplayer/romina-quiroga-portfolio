@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 
 const words = {
-  eng: ["think", "live", "dream", "create"],
+  eng: ["thinking", "living", "dreaming", "creating"],
   esp: ["pensar", "vivir", "soñar", "crear"],
 };
 

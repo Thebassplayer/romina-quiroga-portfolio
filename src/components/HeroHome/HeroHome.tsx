@@ -33,7 +33,7 @@ const HeroHome = () => {
         <p className="font-extralight">is a</p>
       </div>
       <div className="flex justify-start">
-        <p>form of</p>
+        <p>way of</p>
         <p>&nbsp;</p>
         <ChangingWord />
       </div>
