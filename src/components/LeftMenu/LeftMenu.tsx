@@ -1,7 +1,5 @@
 import cx from "@/app/utils/classesReducer";
 import Link from "next/link";
-import LinkedInIcon from "../Icons/LinkedinIcon";
-import BehanceIcon from "../Icons/BehanceIcon";
 import TextTransition from "../RQButton/RQButton";
 import SocialLinks from "../SocialLinks/SocialLinks";
 
