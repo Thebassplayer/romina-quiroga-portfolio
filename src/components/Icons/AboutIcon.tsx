@@ -15,7 +15,7 @@ const AboutIcon = (props: SVGProps<SVGSVGElement>) => {
         stroke="black"
         stroke-width="2"
         stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <path
         d="M14.5312 25.3119C15.5668 25.3119 16.4062 24.4724 16.4062 23.4369C16.4062 22.4014 15.5668 21.5619 14.5312 21.5619C13.4957 21.5619 12.6562 22.4014 12.6562 23.4369C12.6562 24.4724 13.4957 25.3119 14.5312 25.3119Z"

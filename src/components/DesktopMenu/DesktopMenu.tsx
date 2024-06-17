@@ -24,21 +24,21 @@ type DesktopMenuProps = {
 
 const DesktopMenu = ({ className }: DesktopMenuProps) => {
   return (
-    <Suspense>
-      <nav className={cx("w-screen", className)}>
-        <ul className="flex w-full flex-row justify-evenly px-80 py-16 font-SansationLg *:text-3xl">
-          <li className="relative">
-            <ProyectsButton />
-          </li>
-          {DESKTOP_MENU.map((element, index) => (
-            <li key={`${index}-${element.id}`}>{element.component}</li>
-          ))}
-          <li>
+    <nav className={cx("w-screen", className)}>
+      <ul className="flex w-full flex-row justify-evenly px-80 py-16 font-SansationLg *:text-3xl">
+        <li className="relative">
+          <ProyectsButton />
+        </li>
+        {DESKTOP_MENU.map((element, index) => (
+          <li key={`${index}-${element.id}`}>{element.component}</li>
+        ))}
+        <li>
+          <Suspense>
             <LanguajeButton />
-          </li>
-        </ul>
-      </nav>
-    </Suspense>
+          </Suspense>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
