@@ -1,7 +1,6 @@
 "use client";
 import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
 import AboutIcon from "../../Icons/AboutIcon";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 const ABOUT_ME_BUTTON_DATA = {
