@@ -2,16 +2,17 @@
 import Link from "next/link";
 import React from "react";
 import LanguajeIcon from "../../Icons/languajeIcon";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const LanguajeButton = () => {
   const searchParams = useSearchParams();
+  const path = usePathname();
   const eng = searchParams.get("eng") === "true" ? true : false;
-  const path = eng ? "?eng=false" : "?eng=true";
+  const newpath = eng ? path : "?eng=true";
   const text = eng ? "Español" : "English";
 
   return (
-    <Link href={path} className="flex text-2xl">
+    <Link href={newpath} className="flex text-2xl">
       <LanguajeIcon />
       <p className="ml-2 h-min border-l-2 border-black pl-2">{text}</p>
     </Link>

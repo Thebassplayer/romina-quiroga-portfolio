@@ -1,4 +1,5 @@
 "use client";
+import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
 import AboutIcon from "../../Icons/AboutIcon";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -19,10 +20,10 @@ const AboutMeButton = () => {
   const text = eng ? title.eng : title.spa;
 
   return (
-    <Link href={path} className="flex">
+    <RetainQueryLink href={path} className="flex">
       {icon}
       <p className="ml-2 border-l-2 border-black pl-2">{text}</p>
-    </Link>
+    </RetainQueryLink>
   );
 };
 

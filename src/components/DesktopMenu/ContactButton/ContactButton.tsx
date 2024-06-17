@@ -1,6 +1,6 @@
 "use client";
+import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
 import EmailIcon from "../../Icons/EmailIcon";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 const CONTACT_BUTTON_DATA = {
@@ -19,10 +19,10 @@ const ContactButton = () => {
   const text = eng ? title.eng : title.spa;
 
   return (
-    <Link href={path} className="flex">
+    <RetainQueryLink href={path} className="flex">
       {icon}
       <p className="ml-2 border-l-2 border-black pl-2">{text}</p>
-    </Link>
+    </RetainQueryLink>
   );
 };
 

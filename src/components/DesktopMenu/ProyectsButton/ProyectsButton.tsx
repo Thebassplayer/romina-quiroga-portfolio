@@ -1,7 +1,7 @@
 "use client";
 import Fingerprint from "@/components/Icons/Fingerprint";
+import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 const PROYECTS_BUTTON_DATA = {
@@ -54,9 +54,9 @@ const ProyectsButton = () => {
       >
         {PROYECTS.map((element, index) => (
           <li key={`${index}-${element.title}`}>
-            <Link href={element.path}>
+            <RetainQueryLink href={element.path}>
               <p className="hover:underline">{element.title}</p>
-            </Link>
+            </RetainQueryLink>
           </li>
         ))}
       </motion.ul>
