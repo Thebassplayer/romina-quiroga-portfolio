@@ -41,7 +41,7 @@ const ProyectsButton = () => {
       initial="rest"
       whileHover="hover"
       animate="rest"
-      className="flex flex-col items-center"
+      className="relative flex flex-col items-center"
     >
       <div className="flex cursor-pointer">
         {icon}
@@ -50,7 +50,7 @@ const ProyectsButton = () => {
       {/* Desplegable menu */}
       <motion.ul
         variants={toogleMenu}
-        className="flex w-fit flex-col gap-2 pt-2 *:text-base"
+        className="absolute top-10 flex w-fit flex-col gap-2 pt-2 *:text-base"
       >
         {PROYECTS.map((element, index) => (
           <li key={`${index}-${element.title}`}>
