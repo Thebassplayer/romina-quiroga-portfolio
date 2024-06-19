@@ -1,5 +1,4 @@
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
-import React from "react";
 
 type LayoutProps = {
   children: React.ReactNode;

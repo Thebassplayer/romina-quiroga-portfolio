@@ -29,7 +29,7 @@ export default function RootLayout({
         )}
       >
         <main className="relative flex h-screen w-screen grow flex-col">
-          <LeftMenu className="absolute left-0 z-50" />
+          <LeftMenu className="fixed left-0 z-50" />
           {children}
         </main>
       </body>
