@@ -35,7 +35,9 @@ const DesktopMenu = ({ className }: DesktopMenuProps) => {
     <nav className={cx("w-screen", className)}>
       <ul className="flex w-full flex-row justify-evenly px-80 pt-16 font-SansationLg *:text-3xl">
         <li className="relative">
-          <ProyectsButton />
+          <Suspense>
+            <ProyectsButton />
+          </Suspense>
         </li>
         {DESKTOP_MENU.map((element, index) => (
           <li key={`${index}-${element.id}`}>{element.component}</li>
