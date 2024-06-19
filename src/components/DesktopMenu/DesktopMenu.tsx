@@ -9,11 +9,19 @@ import { Suspense } from "react";
 
 const DESKTOP_MENU = [
   {
-    component: <AboutMeButton />,
+    component: (
+      <Suspense>
+        <AboutMeButton />
+      </Suspense>
+    ),
     id: "about",
   },
   {
-    component: <ContactButton />,
+    component: (
+      <Suspense>
+        <ContactButton />
+      </Suspense>
+    ),
     id: "contact",
   },
 ];

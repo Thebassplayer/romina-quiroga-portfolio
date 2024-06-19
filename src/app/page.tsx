@@ -21,9 +21,8 @@ export default function Home() {
         </div>
         <ProyectsCarrousell />
       </section>
-      <Suspense>
-        <GoTopButton topRef={topRef} />
-      </Suspense>
+
+      <GoTopButton topRef={topRef} />
     </>
   );
 }
