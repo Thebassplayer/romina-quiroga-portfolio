@@ -1,4 +1,5 @@
 "use client";
+
 import { useRef } from "react";
 import HeroHome from "@/components/HeroHome/HeroHome";
 import { Suspense } from "react";
@@ -20,7 +21,9 @@ export default function Home() {
         </div>
         <ProyectsCarrousell />
       </section>
-      <GoTopButton topRef={topRef} />
+      <Suspense>
+        <GoTopButton topRef={topRef} />
+      </Suspense>
     </>
   );
 }
