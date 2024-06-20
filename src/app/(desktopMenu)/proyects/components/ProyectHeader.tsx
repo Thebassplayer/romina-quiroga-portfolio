@@ -12,7 +12,7 @@ const ProyectHeader: React.FC<ProyectHeaderProps> = ({
   date,
 }) => {
   return (
-    <div className="flex h-min w-5/6 justify-between border-b border-black pb-2 pt-20 *:font-roboto">
+    <div className="flex h-min w-full justify-between border-b border-black pb-2 pt-20 *:font-roboto">
       <div>
         <h1 className="mb-2 text-6xl font-extralight uppercase">{title}</h1>
         <h2 className="text-2xl">{subtitle}</h2>
