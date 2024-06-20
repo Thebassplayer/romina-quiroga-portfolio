@@ -27,11 +27,11 @@ const AboutHero = () => {
   const text = eng ? ABOUT_TEXT.eng : ABOUT_TEXT.esp;
 
   return (
-    <div className="grid grid-cols-2 divide-x-2 divide-solid divide-black">
-      <div className="flex h-full w-[410px] items-center justify-center justify-self-end pr-32">
-        <p className="font-roboto text-5xl font-extralight">{text.leftHero}</p>
+    <div className="grid w-10/12 grid-cols-2 divide-x-2 divide-solid divide-black">
+      <div className="flex h-full items-center justify-center justify-self-end pl-16 pr-32">
+        <p className="font-roboto text-6xl font-extralight">{text.leftHero}</p>
       </div>
-      <div className="flex w-[670px] flex-col gap-4 pl-32">
+      <div className="flex flex-col gap-4 py-4 pl-32">
         {text.rightHero.map((paragraph, index) => (
           <p key={index} className="font-roboto text-xl font-light">
             {paragraph}
