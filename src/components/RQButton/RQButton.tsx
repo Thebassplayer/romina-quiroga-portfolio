@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import { motion } from "framer-motion";
 import cx from "@/app/utils/classesReducer";
 
@@ -8,8 +8,6 @@ type TextTransitionProps = {
 };
 
 const rominaQuirogaText = "Romina Quiroga";
-
-const letters = rominaQuirogaText.split("");
 
 const rightMotion = {
   rest: { opacity: 0, ease: "easeOut", duration: 0.2, type: "tween" },
@@ -60,13 +58,13 @@ const TextTransition = ({ className }: TextTransitionProps) => {
       )}
     >
       <motion.div variants={leftMotion}>
-        <p>RQ</p>
+        <p className="p-2 backdrop-blur-sm">RQ</p>
       </motion.div>
       <motion.div
         variants={rightMotion}
         className="absolute -right-[240px] top-0 w-max"
       >
-        <p>{rominaQuirogaText}</p>
+        <p className="p-2 backdrop-blur-sm">{rominaQuirogaText}</p>
       </motion.div>
     </motion.div>
   );
