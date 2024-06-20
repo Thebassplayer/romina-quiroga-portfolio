@@ -19,7 +19,7 @@ const config: Config = {
         secondarylight: "rgba(1, 66, 254, 0.44)",
       },
       backgroundImage: {
-        "romi-gradient": "url('/assets/background.png')",
+        "romi-gradient": "url('/assets/background.jpg')",
       },
     },
   },

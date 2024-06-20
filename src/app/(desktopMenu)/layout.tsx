@@ -8,7 +8,7 @@ const layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex h-screen w-full flex-col items-center">
       <DesktopMenu />
-      <div className="flex grow justify-center">{children}</div>
+      <div className="justify-cente mt-12 flex w-full grow">{children}</div>
     </div>
   );
 };
