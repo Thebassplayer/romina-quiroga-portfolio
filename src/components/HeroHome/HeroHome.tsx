@@ -20,7 +20,9 @@ const HeroHome = () => {
         <div className="flex justify-start">
           <p>forma de</p>
           <p>&nbsp;</p>
-          <ChangingWord />
+          <Suspense>
+            <ChangingWord />
+          </Suspense>
         </div>
       </div>
     );

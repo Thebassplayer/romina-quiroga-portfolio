@@ -2,6 +2,7 @@
 import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
 import AboutIcon from "../../Icons/AboutIcon";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const ABOUT_ME_BUTTON_DATA = {
   title: {

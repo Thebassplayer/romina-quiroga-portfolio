@@ -17,16 +17,6 @@ const GoTopButton = ({ topRef }: GoTopButtonProps) => {
   }, []);
 
   return (
-    // <button
-    //   className="fixed bottom-10 right-10 bg-white p-4"
-    //   onClick={() =>
-    //     topRef.current?.scrollIntoView({
-    //       behavior: "smooth",
-    //     })
-    //   }
-    // >
-    //   Go Top
-    // </button>
     <AnimatePresence>
       {scrollPosition > 100 && (
         <motion.button
