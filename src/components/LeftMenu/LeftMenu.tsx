@@ -22,7 +22,7 @@ const LeftMenu = ({ className }: LeftMenuProps) => {
     <div className={cx("w-200 flex h-full flex-col pl-4", className)}>
       <div className="grow">
         {isHome ? (
-          <button onClick={scrollToTop} title="Scroll to Top">
+          <button onClick={scrollToTop} title="Go Top">
             <TextTransition className="mt-28 font-roboto text-2xl font-bold" />
           </button>
         ) : (
