@@ -1,4 +1,3 @@
-"use client";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import GoTopButton from "@/components/GoTopButton/GoTopButton";
 
