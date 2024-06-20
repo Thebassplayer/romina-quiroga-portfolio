@@ -5,7 +5,11 @@ type ProyectContainerProps = {
 };
 
 const ProyectContainer = ({ children }: ProyectContainerProps) => {
-  return <div className="flex w-full justify-center">{children}</div>;
+  return (
+    <div className="flex w-full flex-col items-center justify-center gap-8">
+      {children}
+    </div>
+  );
 };
 
 export default ProyectContainer;
