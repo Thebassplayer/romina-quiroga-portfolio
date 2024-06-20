@@ -5,7 +5,7 @@ const ContactForm = () => {
         Nombre
       </label>
       <input
-        className=" mb-6 rounded-md border bg-white/50 px-4 py-2 text-white"
+        className=" mb-6 rounded-md border bg-white/50 px-4 py-2 text-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
         name="nombre"
         placeholder="Tu nombre"
         required
@@ -14,7 +14,7 @@ const ContactForm = () => {
         Email
       </label>
       <input
-        className=" mb-6 rounded-md border bg-white/50 px-4 py-2 text-white"
+        className=" mb-6 rounded-md border bg-white/50 px-4 py-2 text-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
         name="email"
         placeholder="your@mail.com"
         required
@@ -23,13 +23,13 @@ const ContactForm = () => {
         Deja tu mensaje
       </label>
       <input
-        className=" mb-6 rounded-md border bg-white/50 px-4 py-2 text-white"
+        className=" mb-6 rounded-md border bg-white/50 px-4 py-2 text-white focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
         name="email"
         type="textarea"
         placeholder="Tu mensaje"
         required
       />
-      <button className="mt-10 rounded-md border px-4 py-2 text-white">
+      <button className="mt-10 rounded-md border px-4 py-2 text-white hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary">
         Enviar
       </button>
     </form>
