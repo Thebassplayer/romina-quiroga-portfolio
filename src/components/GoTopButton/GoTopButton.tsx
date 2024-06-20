@@ -10,7 +10,7 @@ const GoTopButton = ({ topRef }: GoTopButtonProps) => {
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.pageYOffset);
+      setScrollPosition(window.scrollY);
     };
     window.addEventListener("scroll", updatePosition);
     return () => window.removeEventListener("scroll", updatePosition);
