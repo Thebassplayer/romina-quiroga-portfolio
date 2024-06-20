@@ -1,11 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-type GoTopButtonProps = {
-  topRef: React.RefObject<HTMLDivElement>;
-};
-
-const GoTopButton = ({ topRef }: GoTopButtonProps) => {
+const GoTopButton = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {

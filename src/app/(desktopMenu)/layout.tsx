@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
         <DesktopMenu />
         <div className="justify-cente mt-12 flex w-full grow">{children}</div>
       </div>
-      <GoTopButton topRef={topRef} />
+      <GoTopButton />
     </>
   );
 };

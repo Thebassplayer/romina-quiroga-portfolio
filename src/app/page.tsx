@@ -22,7 +22,7 @@ export default function Home() {
         <ProyectsCarrousell />
       </section>
 
-      <GoTopButton topRef={topRef} />
+      <GoTopButton />
     </>
   );
 }
