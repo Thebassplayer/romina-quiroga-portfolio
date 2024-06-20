@@ -4,6 +4,7 @@ import "./globals.css";
 import cx from "./utils/classesReducer";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import LeftMenu from "@/components/LeftMenu/LeftMenu";
+import { Suspense } from "react";
 
 const roboto = Roboto({
   weight: "400",
@@ -29,7 +30,9 @@ export default function RootLayout({
         )}
       >
         <main className="relative flex h-screen w-screen grow flex-col">
-          <LeftMenu className="fixed left-0 z-50" />
+          <Suspense>
+            <LeftMenu className="fixed left-0 z-50" />
+          </Suspense>
           {children}
         </main>
       </body>
