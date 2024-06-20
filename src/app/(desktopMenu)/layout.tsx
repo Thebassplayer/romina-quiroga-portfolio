@@ -1,16 +1,23 @@
+"use client";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
+import GoTopButton from "@/components/GoTopButton/GoTopButton";
+import { useRef } from "react";
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 
-const layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
+  const topRef = useRef<HTMLDivElement | null>(null);
   return (
-    <div className="flex h-screen w-full flex-col items-center">
-      <DesktopMenu />
-      <div className="justify-cente mt-12 flex w-full grow">{children}</div>
-    </div>
+    <>
+      <div ref={topRef} className="flex h-screen w-full flex-col items-center">
+        <DesktopMenu />
+        <div className="justify-cente mt-12 flex w-full grow">{children}</div>
+      </div>
+      <GoTopButton topRef={topRef} />
+    </>
   );
 };
 
-export default layout;
+export default Layout;
