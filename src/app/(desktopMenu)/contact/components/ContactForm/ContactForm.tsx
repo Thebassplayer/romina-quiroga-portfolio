@@ -19,19 +19,19 @@ const ContactForm = () => {
   }, [loading, success, error, router]);
   return (
     <Formik
-      initialValues={{ nombre: "", email: "", message: "" }}
+      initialValues={{ name: "", email: "", message: "" }}
       validationSchema={toFormikValidationSchema(contactFormSchema)}
       onSubmit={(values) => subscribe(values)}
     >
       {({ isSubmitting }) => (
         <Form className="animate-in text-foreground flex w-1/2 flex-col justify-center gap-2 p-4 *:font-roboto">
           <div className="mb-6 flex w-full flex-col">
-            <label className="text-md text-white" htmlFor="nombre">
+            <label className="text-md text-white" htmlFor="name">
               Nombre
             </label>
             <Field
               className="rounded-md border bg-white/50 px-4 py-2 text-black focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
-              name="nombre"
+              name="name"
               placeholder="Tu nombre"
               maxLength={50}
             />

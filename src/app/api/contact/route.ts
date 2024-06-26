@@ -11,11 +11,11 @@ export const POST = async (req: Request) => {
       throw new Error(validBody.error.errors[0].message);
     }
 
-    const { email, nombre, message } = validBody.data;
+    const { email, name, message } = validBody.data;
 
-    console.table({ email, nombre, message });
+    console.table({ email, name, message });
 
-    await sendEmail(email, "Test Email", "This is a test email from Next.js!");
+    await sendEmail(email, `Mi nombre es ${name}`, message);
 
     return new Response(JSON.stringify("Subscription created"), {
       status: 201,

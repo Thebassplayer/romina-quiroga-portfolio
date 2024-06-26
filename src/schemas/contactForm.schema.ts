@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const contactFormSchema = z.object({
-  nombre: z
+  name: z
     .string({
       message: "Ingresa tu nombre",
     })
