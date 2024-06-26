@@ -37,7 +37,7 @@ const useContact = () => {
     }
   };
 
-  const subscribeButtonValue = ({
+  const contactButtonValueGenerator = ({
     loading,
     success,
     error,
@@ -57,7 +57,13 @@ const useContact = () => {
     }
   };
 
-  return { subscribe, loading, error, success, subscribeButtonValue };
+  const contactButtonValue = contactButtonValueGenerator({
+    loading,
+    success,
+    error,
+  });
+
+  return { subscribe, loading, error, success, contactButtonValue };
 };
 
 export default useContact;

@@ -1,27 +1,27 @@
+"use client";
 import useContact from "@/hooks/useContact";
 import { contactFormSchema } from "@/schemas/contactForm.schema";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { z } from "zod";
+import { useEffect } from "react";
 import { toFormikValidationSchema } from "zod-formik-adapter";
-
-const subscriptionApi = process.env.NEXT_PUBLIC_CONTACT_API;
+import { useRouter } from "next/navigation";
 
 const ContactForm = () => {
-  const { subscribe, loading, success, error, subscribeButtonValue } =
+  const { subscribe, loading, success, error, contactButtonValue } =
     useContact();
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (success) {
+      router.push("/");
+    }
+  }, [loading, success, error, router]);
   return (
     <Formik
       initialValues={{ nombre: "", email: "", message: "" }}
       validationSchema={toFormikValidationSchema(contactFormSchema)}
-      onSubmit={async (values) => {
-        await fetch(subscriptionApi || "", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
-      }}
+      onSubmit={(values) => subscribe(values)}
     >
       {({ isSubmitting }) => (
         <Form className="animate-in text-foreground flex w-1/2 flex-col justify-center gap-2 p-4 *:font-roboto">
@@ -81,7 +81,7 @@ const ContactForm = () => {
             type="submit"
             disabled={isSubmitting}
           >
-            Enviar
+            {contactButtonValue}
           </button>
         </Form>
       )}
