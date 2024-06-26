@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <section ref={topRef} className="h-screen w-screen">
-        <div className="flex h-full w-full  flex-col items-center">
+        <div className="flex h-full w-full flex-col items-center">
           <DesktopMenu className="z-50" />
           <div className="flex grow justify-center">
             <Suspense>
