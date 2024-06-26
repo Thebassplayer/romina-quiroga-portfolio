@@ -1,36 +1,23 @@
+import contactFormSchema from "@/schemas/contactForm";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { z } from "zod";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 
-const ContactForm = () => {
-  const validationSchema = z.object({
-    nombre: z
-      .string({
-        message: "Ingresa tu nombre",
-      })
-      .max(50, "El nombre no puede tener más de 50 caracteres"),
-    email: z
-      .string({
-        message: "Ingresa tu email",
-      })
-      .email("Ingresa un email válido")
-      .max(100, "El email no puede tener más de 100 caracteres"),
-    message: z
-      .string({
-        message: "Ingresa tu mensaje",
-      })
-      .max(500, "El mensaje no puede tener más de 500 caracteres"),
-  });
+const subscriptionApi = process.env.NEXT_PUBLIC_CONTACT_API;
 
+const ContactForm = () => {
   return (
     <Formik
       initialValues={{ nombre: "", email: "", message: "" }}
-      validationSchema={toFormikValidationSchema(validationSchema)}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+      validationSchema={toFormikValidationSchema(contactFormSchema)}
+      onSubmit={async (values) => {
+        await fetch(subscriptionApi || "", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
       }}
     >
       {({ isSubmitting }) => (
