@@ -15,9 +15,11 @@ const ContactForm = () => {
       })
       .email("Ingresa un email válido")
       .max(100, "El email no puede tener más de 100 caracteres"),
-    message: z.string({
-      message: "Ingresa tu mensaje",
-    }),
+    message: z
+      .string({
+        message: "Ingresa tu mensaje",
+      })
+      .max(500, "El mensaje no puede tener más de 500 caracteres"),
   });
 
   return (
