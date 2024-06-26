@@ -1,3 +1,4 @@
+"use client";
 import ContactForm from "./components/ContactForm/ContactForm";
 
 const Contact = () => {
