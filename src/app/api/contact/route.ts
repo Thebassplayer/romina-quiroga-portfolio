@@ -1,5 +1,5 @@
 import { sendEmail } from "@/app/utils/sendGrid";
-import contactFormSchema from "@/schemas/contactForm";
+import { contactFormSchema } from "@/schemas/contactForm.schema";
 
 export const POST = async (req: Request) => {
   const body = await req.json();

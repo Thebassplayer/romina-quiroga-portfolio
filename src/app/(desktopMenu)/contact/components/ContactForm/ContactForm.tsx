@@ -1,4 +1,5 @@
-import contactFormSchema from "@/schemas/contactForm";
+import useContact from "@/hooks/useContact";
+import { contactFormSchema } from "@/schemas/contactForm.schema";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { z } from "zod";
 import { toFormikValidationSchema } from "zod-formik-adapter";
@@ -6,6 +7,8 @@ import { toFormikValidationSchema } from "zod-formik-adapter";
 const subscriptionApi = process.env.NEXT_PUBLIC_CONTACT_API;
 
 const ContactForm = () => {
+  const { subscribe, loading, success, error, subscribeButtonValue } =
+    useContact();
   return (
     <Formik
       initialValues={{ nombre: "", email: "", message: "" }}
