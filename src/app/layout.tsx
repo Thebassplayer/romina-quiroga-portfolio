@@ -29,7 +29,7 @@ export default function RootLayout({
           "h-screen w-screen overflow-x-hidden bg-romi-gradient bg-cover bg-center",
         )}
       >
-        <main className="relative flex h-screen w-screen grow flex-col">
+        <main className="relative flex h-screen w-screen flex-col">
           <Suspense>
             <LeftMenu className="fixed left-0 z-50" />
           </Suspense>
