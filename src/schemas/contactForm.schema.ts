@@ -46,4 +46,6 @@ export const getContactFormSchema = (lang: Lang) => {
   });
 };
 
+export const contactFormSchema = getContactFormSchema("eng");
+
 export type ContactForm = z.infer<ReturnType<typeof getContactFormSchema>>;
