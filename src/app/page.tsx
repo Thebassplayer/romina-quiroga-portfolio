@@ -10,7 +10,7 @@ export default function Home() {
   const topRef = useRef<HTMLDivElement | null>(null);
   return (
     <>
-      <section ref={topRef} className="h-screen w-screen">
+      <section ref={topRef} className="h-screen w-screen overflow-x-hidden">
         <div className="flex h-full w-full flex-col items-center">
           <DesktopMenu className="z-50" />
           <div className="flex grow justify-center">
