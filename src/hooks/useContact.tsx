@@ -1,5 +1,6 @@
 "use client";
 import { ContactForm } from "@/schemas/contactForm.schema";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 if (!process.env.NEXT_PUBLIC_CONTACT_API) {
@@ -8,10 +9,29 @@ if (!process.env.NEXT_PUBLIC_CONTACT_API) {
 
 const contactApi = process.env.NEXT_PUBLIC_CONTACT_API;
 
+const SEND_BUTTON_TEXTS = {
+  esp: {
+    sending: "Enviando...",
+    sent: "Enviado!",
+    error: "Error al enviar, intenta de nuevo",
+    default: "Enviar",
+  },
+  eng: {
+    sending: "Sending...",
+    sent: "Sent!",
+    error: "Error sending, try again",
+    default: "Send",
+  },
+};
+
 const useContact = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
+
+  const searchParams = useSearchParams();
+  const eng = searchParams.get("eng") === "true" ? true : false;
+  const text = eng ? SEND_BUTTON_TEXTS.eng : SEND_BUTTON_TEXTS.esp;
 
   const subscribe = async (data: ContactForm) => {
     try {
@@ -47,13 +67,13 @@ const useContact = () => {
     error: boolean;
   }) => {
     if (loading) {
-      return "Enviando...";
+      return text.sending;
     } else if (success) {
-      return "Enviado!";
+      return text.sent;
     } else if (error) {
-      return "Error al enviar, intenta de nuevo";
+      return text.error;
     } else {
-      return "Enviar";
+      return text.default;
     }
   };
 
