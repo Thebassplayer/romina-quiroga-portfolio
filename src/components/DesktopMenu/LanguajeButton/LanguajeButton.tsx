@@ -1,15 +1,21 @@
 "use client";
+
 import Link from "next/link";
 import React from "react";
 import LanguajeIcon from "../../Icons/languajeIcon";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
+import useLanguage from "@/hooks/useLang";
+
+const LANGUAJE_BUTTON_TEXT = {
+  eng: "English",
+  esp: "Español",
+};
 
 const LanguajeButton = () => {
-  const searchParams = useSearchParams();
+  const lang = useLanguage();
   const path = usePathname();
-  const eng = searchParams.get("eng") === "true" ? true : false;
-  const newpath = eng ? path : "?eng=true";
-  const text = eng ? "Español" : "English";
+  const newpath = lang === "eng" ? path : "?eng=true";
+  const text = LANGUAJE_BUTTON_TEXT[lang];
 
   return (
     <Link href={newpath} className="flex text-2xl">
