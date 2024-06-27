@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 
-const ABOUT_TEXT = {
+const ABOUT_TEXTS = {
   esp: {
     leftHero: "Soy Romi, Diseñadora UX UI de Buenos Aires para el mundo",
     rightHero: [
@@ -24,7 +24,7 @@ const ABOUT_TEXT = {
 const AboutHero = () => {
   const searchParams = useSearchParams();
   const eng = searchParams.get("eng") === "true" ? true : false;
-  const text = eng ? ABOUT_TEXT.eng : ABOUT_TEXT.esp;
+  const text = eng ? ABOUT_TEXTS.eng : ABOUT_TEXTS.esp;
 
   return (
     <div className="grid w-10/12 grid-cols-2 divide-x-2 divide-solid divide-black">
