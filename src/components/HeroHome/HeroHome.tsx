@@ -1,13 +1,12 @@
 "use client";
 import React, { Suspense } from "react";
 import ChangingWord from "../ChangingWord/ChangingWord";
-import { useSearchParams } from "next/navigation";
+import useLanguage from "@/hooks/useLang";
 
 const HeroHome = () => {
-  const searchParams = useSearchParams();
-  const eng = searchParams.get("eng") === "true" ? true : false;
+  const lang = useLanguage();
 
-  if (!eng) {
+  if (lang !== "eng") {
     return (
       <div className="flex flex-col justify-center *:font-roboto *:text-8xl lg:w-[750px]">
         <div className="flex justify-start">

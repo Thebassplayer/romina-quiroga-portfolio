@@ -1,7 +1,7 @@
 "use client";
 import { ContactForm } from "@/schemas/contactForm.schema";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import useLanguage from "./useLang";
 
 if (!process.env.NEXT_PUBLIC_CONTACT_API) {
   throw new Error("NEXT_PUBLIC_CONTACT_API is not defined");
@@ -29,9 +29,8 @@ const useContact = () => {
   const [error, setError] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
 
-  const searchParams = useSearchParams();
-  const eng = searchParams.get("eng") === "true" ? true : false;
-  const text = eng ? SEND_BUTTON_TEXTS.eng : SEND_BUTTON_TEXTS.esp;
+  const lang = useLanguage();
+  const text = SEND_BUTTON_TEXTS[lang];
 
   const subscribe = async (data: ContactForm) => {
     try {
