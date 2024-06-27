@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import useLanguage from "@/hooks/useLang";
 
 const ABOUT_TEXTS = {
   esp: {
@@ -22,9 +22,8 @@ const ABOUT_TEXTS = {
 };
 
 const AboutHero = () => {
-  const searchParams = useSearchParams();
-  const eng = searchParams.get("eng") === "true" ? true : false;
-  const text = eng ? ABOUT_TEXTS.eng : ABOUT_TEXTS.esp;
+  const lang = useLanguage();
+  const text = ABOUT_TEXTS[lang];
 
   return (
     <div className="grid w-10/12 grid-cols-2 divide-x-2 divide-solid divide-black">
