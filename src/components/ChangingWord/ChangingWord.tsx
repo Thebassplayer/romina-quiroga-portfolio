@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useSearchParams } from "next/navigation";
+import useLanguage from "@/hooks/useLang";
 
 const MOVING_WORDS = {
   eng: ["thinking", "living", "dreaming", "creating"],
@@ -9,25 +9,23 @@ const MOVING_WORDS = {
 };
 
 const ChangingWord = () => {
-  const searchParams = useSearchParams();
-  const eng = searchParams.get("eng") === "true" ? true : false;
-  const [index, setIndex] = useState(0);
+  const lang = useLanguage();
+  const texts = MOVING_WORDS[lang];
 
+  const [index, setIndex] = useState(0);
   const variants = {
     initial: { opacity: 0, y: 0 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -100 },
   };
 
-  const words = eng ? MOVING_WORDS.eng : MOVING_WORDS.esp;
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((index + 1) % words.length);
+      setIndex((index + 1) % texts.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [index, words.length]);
+  }, [index, texts.length]);
 
   return (
     <div className="*:text-white">
@@ -46,7 +44,7 @@ const ChangingWord = () => {
             exit={{ opacity: 0, y: -5 }}
             transition={{ duration: 0.1 }}
           >
-            {words[index]}
+            {texts[index]}
           </motion.h1>
         </motion.div>
       </AnimatePresence>
