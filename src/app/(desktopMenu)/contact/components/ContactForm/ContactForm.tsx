@@ -1,10 +1,11 @@
 "use client";
 import useContact from "@/hooks/useContact";
-import { contactFormSchema } from "@/schemas/contactForm.schema";
+import { getContactFormSchema, Lang } from "@/schemas/contactForm.schema";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useEffect } from "react";
 import { toFormikValidationSchema } from "zod-formik-adapter";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import useLanguage from "@/hooks/useLang";
 
 const CONTACT_FORM_TEXTS = {
   esp: {
@@ -14,6 +15,7 @@ const CONTACT_FORM_TEXTS = {
     emailPlaceholder: "tu@mail.com",
     messageInput: "Mensaje",
     messagePlaceholder: "Tu mensaje",
+    contactButtonValue: "Enviar",
   },
   eng: {
     nameInput: "Name",
@@ -22,15 +24,14 @@ const CONTACT_FORM_TEXTS = {
     emailPlaceholder: "your@email.com",
     messageInput: "Message",
     messagePlaceholder: "Your message",
+    contactButtonValue: "Send",
   },
 };
 
 const ContactForm = () => {
-  const searchParams = useSearchParams();
-  const eng = searchParams.get("eng") === "true" ? true : false;
-  const text = eng ? CONTACT_FORM_TEXTS.eng : CONTACT_FORM_TEXTS.esp;
-  const { subscribe, loading, success, error, contactButtonValue } =
-    useContact();
+  const lang = useLanguage();
+  const text = CONTACT_FORM_TEXTS[lang];
+  const { subscribe, loading, success, error } = useContact();
 
   const router = useRouter();
 
@@ -39,10 +40,11 @@ const ContactForm = () => {
       router.push("/");
     }
   }, [loading, success, error, router]);
+
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
-      validationSchema={toFormikValidationSchema(contactFormSchema)}
+      validationSchema={toFormikValidationSchema(getContactFormSchema(lang))}
       onSubmit={(values) => subscribe(values)}
     >
       {({ isSubmitting }) => (
@@ -58,7 +60,7 @@ const ContactForm = () => {
               maxLength={50}
             />
             <ErrorMessage
-              name="nombre"
+              name="name"
               component="div"
               className="text-sm text-black"
             />
@@ -103,7 +105,7 @@ const ContactForm = () => {
             type="submit"
             disabled={isSubmitting}
           >
-            {contactButtonValue}
+            {text.contactButtonValue}
           </button>
         </Form>
       )}
