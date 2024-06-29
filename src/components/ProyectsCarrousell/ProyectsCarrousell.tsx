@@ -40,7 +40,7 @@ const PROYECTS = [
 
 const ProyectsCarrousell = () => {
   return (
-    <>
+    <div className="h-full w-full">
       {PROYECTS.map((proyect, index) => (
         <div
           className="grid h-full w-full grid-cols-6 items-center justify-center bg-white/30"
@@ -65,7 +65,7 @@ const ProyectsCarrousell = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
