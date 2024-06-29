@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <main className="flex h-screen w-screen flex-col">
           <Suspense>
-            <LeftMenu className="left-0 z-50 hidden lg:fixed" />
+            <LeftMenu className="left-0 z-50 hidden lg:fixed lg:flex" />
           </Suspense>
           {children}
         </main>
