@@ -9,12 +9,14 @@ const HeroHome = () => {
   if (lang !== "eng") {
     return (
       <div className="flex w-full flex-col justify-center text-3xl *:font-roboto lg:w-[750px] lg:text-8xl">
-        <div className="hidden justify-start lg:flex">
-          <p>El</p>
-          <p>&nbsp;</p>
-          <p className="font-extralight">diseño</p>
-          <p>&nbsp;</p>
-          <p className="font-roboto">es una</p>
+        <div className="hidden justify-start lg:flex lg:flex-col">
+          <div className="flex">
+            <p>El</p>
+            <p>&nbsp;</p>
+            <p className="font-extralight">diseño</p>
+            <p>&nbsp;</p>
+            <p className="font-roboto">es una</p>
+          </div>
           <div className="flex justify-start">
             <p>forma de</p>
             <p>&nbsp;</p>
@@ -23,7 +25,7 @@ const HeroHome = () => {
             </Suspense>
           </div>
         </div>
-        <div className="flex flex-col justify-start text-8xl lg:hidden">
+        <div className="flex flex-col justify-start text-7xl lg:hidden">
           <div className="flex">
             <p>El</p>
             <p>&nbsp;</p>
