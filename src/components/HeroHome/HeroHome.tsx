@@ -8,20 +8,35 @@ const HeroHome = () => {
 
   if (lang !== "eng") {
     return (
-      <div className="flex flex-col justify-center *:font-roboto *:text-8xl lg:w-[750px]">
-        <div className="flex justify-start">
+      <div className="flex w-full flex-col justify-center text-3xl *:font-roboto lg:w-[750px] lg:text-8xl">
+        <div className="hidden justify-start lg:flex">
           <p>El</p>
           <p>&nbsp;</p>
           <p className="font-extralight">diseño</p>
           <p>&nbsp;</p>
           <p className="font-roboto">es una</p>
+          <div className="flex justify-start">
+            <p>forma de</p>
+            <p>&nbsp;</p>
+            <Suspense>
+              <ChangingWord />
+            </Suspense>
+          </div>
         </div>
-        <div className="flex justify-start">
+        <div className="flex flex-col justify-start text-8xl lg:hidden">
+          <div className="flex">
+            <p>El</p>
+            <p>&nbsp;</p>
+            <p className="font-extralight">diseño</p>
+          </div>
+          <p className="font-roboto">es una</p>
           <p>forma de</p>
-          <p>&nbsp;</p>
-          <Suspense>
-            <ChangingWord />
-          </Suspense>
+          <div className="flex">
+            <Suspense>
+              <ChangingWord />
+            </Suspense>
+            <p>&nbsp;</p>
+          </div>
         </div>
       </div>
     );
