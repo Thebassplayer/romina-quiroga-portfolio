@@ -5,6 +5,7 @@ import cx from "./utils/classesReducer";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import LeftMenu from "@/components/LeftMenu/LeftMenu";
 import { Suspense } from "react";
+import GoTopButton from "@/components/GoTopButton/GoTopButton";
 
 const roboto = Roboto({
   weight: "400",
@@ -29,7 +30,7 @@ export default function RootLayout({
           "h-screen w-screen overflow-x-hidden bg-romi-gradient bg-cover bg-center",
         )}
       >
-        <main className="relative flex h-screen w-screen flex-col">
+        <main className="flex h-screen w-screen flex-col">
           <Suspense>
             <LeftMenu className="fixed left-0 z-50" />
           </Suspense>
