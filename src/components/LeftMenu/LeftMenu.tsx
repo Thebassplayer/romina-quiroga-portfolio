@@ -19,7 +19,7 @@ const LeftMenu = ({ className }: LeftMenuProps) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
   return (
-    <div className={cx("w-200 flex h-full flex-col pl-4", className)}>
+    <div className={cx("w-200 h-full flex-col pl-4", className)}>
       <div className="grow">
         {isHome ? (
           <button onClick={scrollToTop} title="Go Top">
