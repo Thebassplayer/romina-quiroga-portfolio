@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <div className="flex h-screen w-full flex-col items-center">
         <DesktopMenu className="hidden lg:block" />
-        <div className="justify-cente mt-16 flex w-full grow px-20">
+        <div className="justify-cente mt-16 flex w-full grow px-10 lg:px-20">
           {children}
         </div>
         <MobileFooter />

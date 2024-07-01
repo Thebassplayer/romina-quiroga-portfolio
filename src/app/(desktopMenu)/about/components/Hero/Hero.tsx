@@ -26,11 +26,13 @@ const AboutHero = () => {
   const text = ABOUT_TEXTS[lang];
 
   return (
-    <div className="grid w-10/12 grid-cols-2 divide-x-2 divide-solid divide-black">
-      <div className="flex h-full items-center justify-center justify-self-end pl-16 pr-32">
-        <p className="font-roboto text-6xl font-extralight">{text.leftHero}</p>
+    <div className="flex w-full flex-col gap-4 lg:grid lg:w-10/12 lg:grid-cols-2 lg:gap-0 lg:divide-x-2 lg:divide-solid lg:divide-black">
+      <div className="flex h-full lg:items-center lg:justify-center lg:justify-self-end lg:pl-16 lg:pr-32">
+        <p className="font-roboto text-5xl font-extralight lg:text-6xl">
+          {text.leftHero}
+        </p>
       </div>
-      <div className="flex flex-col gap-4 py-4 pl-32">
+      <div className="flex flex-col lg:gap-4 lg:py-4 lg:pl-32">
         {text.rightHero.map((paragraph, index) => (
           <p key={index} className="font-roboto text-xl font-light">
             {paragraph}
