@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import RQLink from "../RQLink/RQLink";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import cx from "@/app/utils/classesReducer";
