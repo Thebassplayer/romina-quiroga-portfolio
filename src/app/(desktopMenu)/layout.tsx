@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <div className="flex h-screen w-full flex-col items-center">
-        <DesktopMenu />
+        <DesktopMenu className="hidden lg:block" />
         <div className="justify-cente mt-16 flex w-full grow px-20">
           {children}
         </div>
