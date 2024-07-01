@@ -1,4 +1,5 @@
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
+import MobileFooter from "@/components/Footer/Footer";
 import GoTopButton from "@/components/GoTopButton/GoTopButton";
 
 type LayoutProps = {
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="justify-cente mt-16 flex w-full grow px-20">
           {children}
         </div>
+        <MobileFooter />
       </div>
       <GoTopButton />
     </>

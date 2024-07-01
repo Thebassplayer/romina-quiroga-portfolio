@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import cx from "./utils/classesReducer";
-import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import LeftMenu from "@/components/LeftMenu/LeftMenu";
 import { Suspense } from "react";
-import GoTopButton from "@/components/GoTopButton/GoTopButton";
+import MobileFooter from "@/components/Footer/Footer";
 
 const roboto = Roboto({
   weight: "400",

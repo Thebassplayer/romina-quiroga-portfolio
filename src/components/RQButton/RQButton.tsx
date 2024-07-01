@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import cx from "@/app/utils/classesReducer";
 
-type TextTransitionProps = {
+type RQButtonProps = {
   className?: string;
 };
 
@@ -46,7 +46,7 @@ const letterEffect = {
   },
 };
 
-const TextTransition = ({ className }: TextTransitionProps) => {
+const RQButton = ({ className }: RQButtonProps) => {
   return (
     <motion.div
       initial="rest"
@@ -70,4 +70,4 @@ const TextTransition = ({ className }: TextTransitionProps) => {
   );
 };
 
-export default TextTransition;
+export default RQButton;

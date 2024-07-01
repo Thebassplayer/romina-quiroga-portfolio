@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import ProyectsCarrousell from "@/components/ProyectsCarrousell/ProyectsCarrousell";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import GoTopButton from "@/components/GoTopButton/GoTopButton";
+import MobileFooter from "@/components/Footer/Footer";
 export default function Home() {
   const topRef = useRef<HTMLDivElement | null>(null);
   return (
@@ -20,6 +21,7 @@ export default function Home() {
           </div>
         </div>
         <ProyectsCarrousell />
+        <MobileFooter />
       </section>
 
       <GoTopButton />

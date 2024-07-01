@@ -10,7 +10,7 @@ type SocialLinksProps = {
 
 const SocialLinks = ({ className }: SocialLinksProps) => {
   return (
-    <div className={cx("flex grow flex-col justify-end gap-4", className)}>
+    <div className={cx("flex grow justify-end gap-4", className)}>
       <Link
         href={"https://www.linkedin.com/in/rominagquiroga/"}
         className="hover:scale-105"

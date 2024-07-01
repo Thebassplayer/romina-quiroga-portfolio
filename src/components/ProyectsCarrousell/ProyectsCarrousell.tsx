@@ -40,32 +40,45 @@ const PROYECTS = [
 
 const ProyectsCarrousell = () => {
   return (
-    <div className="h-full w-full">
-      {PROYECTS.map((proyect, index) => (
-        <div
-          className="grid h-full w-full grid-cols-6 items-center justify-center bg-white/30"
-          key={proyect.number}
-        >
-          <div className="col-span-2 grid h-full grid-cols-6">
-            <div className="col-span-3 col-start-3 flex h-1/3 flex-col gap-4 self-center *:font-roboto">
-              <p className="text-7xl">{proyect.number}</p>
-              <p className="text-4xl font-bold">{proyect.title}</p>
-              <p className="text-2xl font-extralight">{proyect.detail}</p>
-              <p className="text-xl">{proyect.year}</p>
+    <>
+      <div className="hidden h-full w-full lg:block">
+        {PROYECTS.map((proyect, index) => (
+          <div
+            className="grid h-full w-full grid-cols-6 items-center justify-center bg-white/30"
+            key={proyect.number}
+          >
+            <div className="col-span-2 grid h-full grid-cols-6">
+              <div className="col-span-3 col-start-3 flex h-1/3 flex-col gap-4 self-center *:font-roboto">
+                <p className="text-7xl">{proyect.number}</p>
+                <p className="text-4xl font-bold">{proyect.title}</p>
+                <p className="text-2xl font-extralight">{proyect.detail}</p>
+                <p className="text-xl">{proyect.year}</p>
+              </div>
+            </div>
+            <div className="col-span-4 h-full py-10">
+              <div className="relative h-full w-full">
+                <Image
+                  src={proyect.image}
+                  alt="Picture of the author"
+                  fill={true}
+                />
+              </div>
             </div>
           </div>
-          <div className="col-span-4 h-full py-10">
-            <div className="relative h-full w-full">
-              <Image
-                src={proyect.image}
-                alt="Picture of the author"
-                fill={true}
-              />
-            </div>
+        ))}
+      </div>
+      <div className="w-full lg:hidden">
+        {PROYECTS.map((proyect, index) => (
+          <div key={proyect.title} className="relative h-full w-full">
+            <Image
+              src={proyect.image}
+              alt="Picture of the author"
+              object-fit="cover"
+            />
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 
