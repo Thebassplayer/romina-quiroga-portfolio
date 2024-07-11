@@ -1,10 +1,10 @@
 "use client";
 
 import cx from "@/app/utils/classesReducer";
-import LanguajeButton from "./LanguajeButton/LanguajeButton";
-import AboutMeButton from "./AboutMeButton/AboutMeButton";
-import ContactButton from "./ContactButton/ContactButton";
-import ProyectsButton from "./ProyectsButton/ProyectsButton";
+import LanguajeButton from "../LanguajeButton/LanguajeButton";
+import AboutMeButton from "../AboutMeButton/AboutMeButton";
+import ContactButton from "../ContactButton/ContactButton";
+import ProyectsButton from "../ProyectsButton/ProyectsButton";
 import { Suspense } from "react";
 
 const DESKTOP_MENU = [
