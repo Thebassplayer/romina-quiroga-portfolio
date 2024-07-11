@@ -1,4 +1,4 @@
-import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
+import DesktopMenu from "@/components/Navigation/DesktopMenu/DesktopMenu";
 import MobileFooter from "@/components/Footer/Footer";
 import GoTopButton from "@/components/GoTopButton/GoTopButton";
 
