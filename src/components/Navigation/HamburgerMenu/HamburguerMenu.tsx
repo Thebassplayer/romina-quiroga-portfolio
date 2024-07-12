@@ -68,36 +68,41 @@ const HamburgerMenu = () => {
   }, [isOpen]);
 
   return (
-    <div className="relative">
-      {isOpen && (
-        <ul
-          ref={menuRef}
-          className={cx(
-            "absolute right-0 top-10 z-50 mt-2 flex flex-col gap-2 border-2 border-black bg-white/70 p-4 font-SansationLg text-black shadow-lg lg:*:text-xl",
-          )}
-        >
-          {MOBILE_MENU.map((element, index) => (
-            <li key={`${index}-${element.id}`} onClick={() => setIsOpen(false)}>
-              {element.component}
+    <Suspense>
+      <div className="relative">
+        {isOpen && (
+          <ul
+            ref={menuRef}
+            className={cx(
+              "absolute right-0 top-10 z-50 mt-2 flex flex-col gap-2 border-2 border-black bg-white/70 p-4 font-SansationLg text-black shadow-lg lg:*:text-xl",
+            )}
+          >
+            {MOBILE_MENU.map((element, index) => (
+              <li
+                key={`${index}-${element.id}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {element.component}
+              </li>
+            ))}
+            <li className="relative">
+              <Suspense>
+                <ProyectsButtonMobile
+                  toggleHamburgerMenu={() => setIsOpen(false)}
+                />
+              </Suspense>
             </li>
-          ))}
-          <li className="relative">
-            <Suspense>
-              <ProyectsButtonMobile
-                toggleHamburgerMenu={() => setIsOpen(false)}
-              />
-            </Suspense>
-          </li>
-          <li>
-            <Suspense>
-              <LanguajeButton />
-            </Suspense>
-          </li>
-        </ul>
-      )}
+            <li>
+              <Suspense>
+                <LanguajeButton />
+              </Suspense>
+            </li>
+          </ul>
+        )}
 
-      <HamburgerButton buttonRef={buttonRef} toggleNavMenu={toggleNavMenu} />
-    </div>
+        <HamburgerButton buttonRef={buttonRef} toggleNavMenu={toggleNavMenu} />
+      </div>
+    </Suspense>
   );
 };
 
