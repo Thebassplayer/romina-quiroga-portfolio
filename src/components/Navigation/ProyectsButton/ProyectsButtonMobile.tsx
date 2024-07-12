@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Fingerprint from "@/components/Icons/Fingerprint";
 import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
 import { motion } from "framer-motion";
@@ -70,9 +70,11 @@ const ProyectsButtonMobile = ({
       >
         {PROYECTS.map((element, index) => (
           <li key={`${index}-${element.title}`} onClick={toggleHamburgerMenu}>
-            <RetainQueryLink href={element.path}>
-              <p className="hover:underline">{element.title}</p>
-            </RetainQueryLink>
+            <Suspense>
+              <RetainQueryLink href={element.path}>
+                <p className="hover:underline">{element.title}</p>
+              </RetainQueryLink>
+            </Suspense>
           </li>
         ))}
       </motion.ul>
