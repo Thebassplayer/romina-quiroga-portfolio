@@ -18,9 +18,11 @@ const LanguajeButton = () => {
   const text = LANGUAJE_BUTTON_TEXT[lang];
 
   return (
-    <Link href={newpath} className="flex text-2xl">
+    <Link href={newpath} className="flex lg:text-2xl">
       <LanguajeIcon />
-      <p className="ml-2 h-min border-l-2 border-black pl-2">{text}</p>
+      <p className="ml-2 h-min border-l-2 border-black pl-2 hover:underline">
+        {text}
+      </p>
     </Link>
   );
 };

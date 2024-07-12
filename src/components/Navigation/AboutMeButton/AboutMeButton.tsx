@@ -22,7 +22,9 @@ const AboutMeButton = () => {
   return (
     <RetainQueryLink href={path} className="flex">
       {icon}
-      <p className="ml-2 border-l-2 border-black pl-2">{text}</p>
+      <p className="ml-2 border-l-2 border-black pl-2 hover:underline">
+        {text}
+      </p>
     </RetainQueryLink>
   );
 };

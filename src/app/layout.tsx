@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
 import cx from "./utils/classesReducer";
 import LeftMenu from "@/components/LeftMenu/LeftMenu";
 import { Suspense } from "react";
-import MobileFooter from "@/components/Footer/Footer";
-
-const roboto = Roboto({
-  weight: "400",
-  variable: "--font-rb",
-  subsets: ["latin"],
-});
+import MobileMenu from "@/components/Navigation/MobileMenu/MobileMenu";
 
 export const metadata: Metadata = {
   title: "Romina Quiroga Portfolio",
@@ -30,6 +23,7 @@ export default function RootLayout({
         )}
       >
         <main className="flex h-screen w-screen flex-col">
+          <MobileMenu className="fixed top-0 z-50 block lg:hidden" />
           <Suspense>
             <LeftMenu className="left-0 z-50 hidden lg:fixed lg:flex" />
           </Suspense>

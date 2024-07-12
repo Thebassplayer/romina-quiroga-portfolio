@@ -9,19 +9,13 @@ type HamburgerButtonProps = {
 const HamburgerButton = ({
   buttonRef,
   toggleNavMenu,
-  color = "white",
 }: HamburgerButtonProps) => {
   return (
     <button
       ref={buttonRef}
       title="Abrir menú de navegación"
       onClick={toggleNavMenu}
-      className={cx(
-        "inline-flex items-center justify-center p-2 focus:outline-none focus:ring-primary",
-        color === "white"
-          ? "text-black hover:bg-white hover:text-black hover:ring-2 hover:ring-black"
-          : "text-white hover:bg-black hover:text-white hover:ring-2 hover:ring-white",
-      )}
+      className={cx("inline-flex items-center justify-center p-2 text-black")}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@ import cx from "@/app/utils/classesReducer";
 import LanguajeButton from "../LanguajeButton/LanguajeButton";
 import AboutMeButton from "../AboutMeButton/AboutMeButton";
 import ContactButton from "../ContactButton/ContactButton";
-import ProyectsButton from "../ProyectsButton/ProyectsButton";
+import ProyectsButtonDesktop from "../ProyectsButton/ProyectsButtonDesktop";
 import { Suspense } from "react";
 
 const DESKTOP_MENU = [
@@ -36,7 +36,7 @@ const DesktopMenu = ({ className }: DesktopMenuProps) => {
       <ul className="flex w-full flex-row justify-evenly px-80 pt-16 font-SansationLg *:text-3xl">
         <li className="relative">
           <Suspense>
-            <ProyectsButton />
+            <ProyectsButtonDesktop />
           </Suspense>
         </li>
         {DESKTOP_MENU.map((element, index) => (

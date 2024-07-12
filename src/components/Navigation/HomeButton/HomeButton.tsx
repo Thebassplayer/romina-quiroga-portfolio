@@ -1,19 +1,20 @@
 "use client";
-import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
-import EmailIcon from "../../Icons/EmailIcon";
-import { useSearchParams } from "next/navigation";
 
-const CONTACT_BUTTON_DATA = {
+import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
+import { useSearchParams } from "next/navigation";
+import HomeIcon from "@/components/Icons/HomeIcon";
+
+const HOME_BUTTON_DATA = {
   title: {
-    spa: "Contacto",
-    eng: "Contact",
+    spa: "Inicio",
+    eng: "Home",
   },
-  icon: <EmailIcon />,
-  path: "/contact",
+  icon: <HomeIcon />,
+  path: "/",
 };
 
-const ContactButton = () => {
-  const { title, icon, path } = CONTACT_BUTTON_DATA;
+const HomeButton = () => {
+  const { title, icon, path } = HOME_BUTTON_DATA;
   const searchParams = useSearchParams();
   const eng = searchParams.get("eng") === "true" ? true : false;
   const text = eng ? title.eng : title.spa;
@@ -28,4 +29,4 @@ const ContactButton = () => {
   );
 };
 
-export default ContactButton;
+export default HomeButton;

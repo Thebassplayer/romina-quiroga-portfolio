@@ -1,8 +1,13 @@
 "use client";
+import { useState } from "react";
 import Fingerprint from "@/components/Icons/Fingerprint";
 import RetainQueryLink from "@/components/RetainQueryLink/RetainQueryLink";
 import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
+
+type ProyectsButtonMobileProps = {
+  toggleHamburgerMenu?: () => void;
+};
 
 const PROYECTS_BUTTON_DATA = {
   title: {
@@ -18,50 +23,61 @@ const PROYECTS = [
   { title: "App Home", path: "/proyects/app-home" },
   { title: "Madre Dachshund", path: "/proyects/madre-dachshund" },
 ];
-const toogleMenu = {
-  rest: { opacity: 0, ease: "easeOut", duration: 0.2, type: "tween" },
-  hover: {
-    opacity: 1,
+
+const toggleMenuVariants = {
+  hidden: {
+    opacity: 0,
     transition: {
-      duration: 0.2,
-      type: "tween",
-      ease: "easeIn",
+      duration: 0,
+    },
+  },
+  visible: {
+    opacity: 1,
+
+    transition: {
+      duration: 0,
     },
   },
 };
 
-const ProyectsButton = () => {
+const ProyectsButtonMobile = ({
+  toggleHamburgerMenu,
+}: ProyectsButtonMobileProps) => {
+  const [menuVisible, setMenuVisible] = useState(false);
   const { title, icon } = PROYECTS_BUTTON_DATA;
   const searchParams = useSearchParams();
-  const eng = searchParams.get("eng") === "true" ? true : false;
+  const eng = searchParams.get("eng") === "true";
   const text = eng ? title.eng : title.spa;
 
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
+
   return (
-    <motion.div
-      initial="rest"
-      whileHover="hover"
-      animate="rest"
-      className="relative flex flex-col items-center"
-    >
-      <div className="flex cursor-pointer">
+    <div className="relative flex flex-col items-center">
+      <div className="flex cursor-pointer" onClick={toggleMenu}>
         {icon}
-        <p className="ml-2 border-l-2 border-black pl-2">{text}</p>
+        <p className="ml-2 border-l-2 border-black pl-2 hover:underline">
+          {text}
+        </p>
       </div>
       {/* Desplegable menu */}
       <motion.ul
-        variants={toogleMenu}
-        className="absolute top-10 flex w-fit flex-col gap-2 pt-2 *:text-base"
+        initial="hidden"
+        animate={menuVisible ? "visible" : "hidden"}
+        variants={toggleMenuVariants}
+        className="absolute -left-[184px] top-0 flex w-fit flex-col gap-2 border-2 border-black bg-white/70 p-4 pt-2 *:text-base"
       >
         {PROYECTS.map((element, index) => (
-          <li key={`${index}-${element.title}`}>
+          <li key={`${index}-${element.title}`} onClick={toggleHamburgerMenu}>
             <RetainQueryLink href={element.path}>
               <p className="hover:underline">{element.title}</p>
             </RetainQueryLink>
           </li>
         ))}
       </motion.ul>
-    </motion.div>
+    </div>
   );
 };
 
-export default ProyectsButton;
+export default ProyectsButtonMobile;

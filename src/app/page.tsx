@@ -15,7 +15,7 @@ export default function Home() {
       <section ref={topRef} className="h-screen w-screen">
         <div className="relative flex h-full w-full flex-col items-center justify-center">
           <DesktopMenu className="absolute top-0 z-50 hidden lg:block" />
-          <MobileMenu className="absolute top-0 z-50 block lg:hidden" />
+
           <div className="flex justify-center">
             <Suspense>
               <HeroHome />
