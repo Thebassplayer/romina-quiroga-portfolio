@@ -8,7 +8,7 @@ type MobileMenuProps = {
 const MobileMenu = ({ className }: MobileMenuProps) => {
   return (
     <div className={cx(className, "flex w-full justify-end p-4")}>
-      <HamburgerMenu />
+      {/* <HamburgerMenu /> */}
     </div>
   );
 };
